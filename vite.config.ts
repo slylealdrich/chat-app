@@ -12,7 +12,6 @@ const webSocketServer = {
 
 		io.on('connection', (socket) => {
 			socket.on('new-chat', (chat: Chat) => {
-				console.log('received new chat: ', chat);
 				socket.broadcast.emit('new-chat', chat);
 			});
 		});
